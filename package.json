@@ -4,7 +4,9 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "lint": "eslint src/ --ext .js,.vue --fix",
+    "prepare": "husky install"
   },
   "dependencies": {
     "amfe-flexible": "^2.2.1",
@@ -15,6 +17,13 @@
   "devDependencies": {
     "@vitejs/plugin-vue": "^2.0.0",
     "autoprefixer": "^10.4.2",
+    "eslint": "^7.12.1",
+    "eslint-config-standard": "^16.0.3",
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-promise": "^4.2.1",
+    "eslint-plugin-vue": "^8.3.0",
+    "husky": "^7.0.4",
     "postcss-pxtorem": "^6.0.0",
     "vite": "^2.7.2",
     "vite-plugin-style-import": "^1.4.1"
