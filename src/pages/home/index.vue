@@ -19,7 +19,9 @@
       </van-tab>
     </van-tabs>
   </div>
-
+  <teleport to="#tabbar-wrapper">
+    <tabbar/>
+  </teleport>
 </template>
 
 <script setup>
@@ -27,6 +29,7 @@ import { ref, reactive, onMounted, computed } from 'vue'
 import { getTopicsList } from '@/service/topics'
 import { useTopics } from '@/store/topics.js'
 import TopicCard from './components/TopicCard.vue'
+import Tabbar from '@/components/Tabbar.vue'
 
 onMounted(async () => {
   const res = await getList()
