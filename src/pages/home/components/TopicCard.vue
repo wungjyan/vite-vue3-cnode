@@ -1,5 +1,5 @@
 <template>
-    <div class="topic-card">
+    <div class="topic-card" @click="toDetail">
         <div class="title">{{topic.title}}</div>
         <div class="desc">
             <div v-if="imgs.length<3" class="img-and-text">
@@ -24,6 +24,8 @@
 
 <script setup>
 import { formatHtmlToString, getImgFromRichText } from '@/utils/index.js'
+import { useRouter } from 'vue-router'
+
 const props = defineProps({
   topic: Object
 })
@@ -37,6 +39,11 @@ const getDescText = (html) => {
 let imgs = getImgFromRichText(props.topic.content)
 if (imgs.length > 3) {
   imgs = imgs.slice(0, 3)
+}
+
+const router = useRouter()
+const toDetail = () => {
+  router.push('/article?id=' + props.topic.id)
 }
 
 </script>
