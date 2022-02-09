@@ -108,14 +108,11 @@ const formatTag = (key) => tabs[key]
         color: #333;
         word-break: break-all;
         line-height: 1.5;
-        // :deep(img){
-        //     max-width: 100%;
-        // }
-        ::v-deep img{
-            max-width: 100%;
+        :deep(img){
+          max-width: 100%;
         }
-        ::v-deep pre{
-            overflow-x: auto;
+        :deep(pre){
+          overflow-x: auto;
         }
     }
 }
